@@ -29,6 +29,9 @@ Reserved block count:     262140
 4. Disable transparent hugepage support
 ```
 [gianbo@gianbo01 ~]$ sudo bash -c "echo 'never' > /sys/kernel/mm/transparent_hugepage/defrag"
+[gianbo@gianbo01 ~]$ cat /sys/kernel/mm/transparent_hugepage/enabled
+always madvise [never]
+
 ```
 
 On the Cloudera CentOS 6.8 that we used the transarent hugepage support is already disabled.
