@@ -22,11 +22,8 @@ none /proc/sys/fs/binfmt_misc binfmt_misc rw,relatime 0 0
 
 3. Show the reserve space of any non-root, ext-based volumes
 ```
-Filesystem     Type   Size  Used Avail Use% Mounted on
-/dev/sda2      ext4    49G  803M   46G   2% /
-tmpfs          tmpfs  7.9G     0  7.9G   0% /dev/shm
-/dev/sda1      ext4   240M   45M  183M  20% /boot
-/dev/sdb1      ext4    99G  2.1G   92G   3% /mnt/resource
+[gianbo@gianbo01 ~]$ sudo tune2fs -l /dev/sdc1 | grep 'Reserved block count'
+Reserved block count:     262140
 ```
 
 4. Disable transparent hugepage support
@@ -250,4 +247,7 @@ Complete!
 
 ```
 [gianbo@gianbo01 ~]$ sudo chkconfig ntpd on
+[gianbo@gianbo01 ~]$ sudo service ntpd start
+Starting ntpd:                                             [  OK  ]
+
 ```
