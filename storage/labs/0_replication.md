@@ -54,7 +54,8 @@
                 Bytes Written=524288000
 ```
 
-- Copy your partner's file to your target directory
+- Copy your partner's file to your target directory.
+
 We were forced to enable the HDFS property dfs.client.use.datanode.hostname otherwise the distcp try to use the internal IP of the secondary cluster.
 ```
 [gianbo@gianbo01 ~]$ hadoop distcp -overwrite -m 4 hdfs://elephant1.westeurope.cloudapp.azure.com:8020/user/bdany70/unsorted/part-m-00000 hdfs://gianbo01:8020/hdfs_lab/bdany70
